@@ -30,3 +30,25 @@ container.appendChild(reset);
 body.appendChild(container);
 
 
+let timeInterval;
+
+//Start Button Click
+start.addEventListener("click", () => {
+    timeInterval = setInterval(() => {
+        let getTime = Number(time.innerHTML);
+        time.innerHTML = getTime + 1;
+    },1000);
+})
+
+
+//Pause Button Click
+pause.addEventListener("click", () => {
+    clearInterval(timeInterval);
+});
+
+
+
+//Reset Button Click
+reset.addEventListener("click", () => {
+    time.innerHTML = 0;
+});
